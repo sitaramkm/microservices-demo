@@ -20,6 +20,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: frontend-gateway
+  namespace: default
 spec:
   selector:
     istio: ingressgateway # use Istio default gateway implementation
@@ -35,6 +36,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: frontend-ingress
+  namespace: default
 spec:
   hosts:
   - "*"
@@ -51,6 +53,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
   name: allow-egress-googleapis
+  namespace: default
 spec:
   hosts:
   - "accounts.google.com" # Used to get token
@@ -67,6 +70,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
   name: allow-egress-google-metadata
+  namespace: default
 spec:
   hosts:
   - metadata.google.internal
@@ -84,6 +88,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: frontend
+  namespace: default
 spec:
   hosts:
   - "frontend.default.svc.cluster.local"
