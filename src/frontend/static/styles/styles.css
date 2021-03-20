@@ -362,7 +362,7 @@ main.home {
 
 .h-jumbotron {
   border-radius: 0;
-  background: url(/static/images/HeroBannerImage2.png) no-repeat top center;
+  background: url(/static/images/jetstack_hero_desktop.jpeg) no-repeat top center;
   background-size: cover;
 }
 

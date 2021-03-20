@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM golang:1.15-alpine AS builder
+FROM golang:1.16-alpine AS builder
 RUN apk add --no-cache ca-certificates git
+
 
 WORKDIR /src
 # restore dependencies
@@ -29,6 +30,8 @@ RUN GRPC_HEALTH_PROBE_VERSION=v0.3.6 && \
     chmod +x /bin/grpc_health_probe
 WORKDIR /productcatalogservice
 COPY --from=builder /productcatalogservice ./server
+COPY products_jetstack.json .
+COPY products_jetstack_simple.json .
 COPY products.json .
 EXPOSE 3550
 ENTRYPOINT ["/productcatalogservice/server"]

@@ -174,37 +174,37 @@ public final class AdService {
     Ad camera =
         Ad.newBuilder()
             .setRedirectUrl("/product/2ZYFJ3GM2N")
-            .setText("Film camera for sale. 50% off.")
+            .setText("Kubeflow paper for sale. 50% off.")
             .build();
     Ad lens =
         Ad.newBuilder()
             .setRedirectUrl("/product/66VCHSJNUP")
-            .setText("Vintage camera lens for sale. 20% off.")
+            .setText("Only today! 20% discount on a printed copy about Cluster APIs.")
             .build();
     Ad recordPlayer =
         Ad.newBuilder()
             .setRedirectUrl("/product/0PUK6V6EV0")
-            .setText("Vintage record player for sale. 30% off.")
+            .setText("You say serverless we say 30% off.")
             .build();
     Ad bike =
         Ad.newBuilder()
             .setRedirectUrl("/product/9SIQT8TOJO")
-            .setText("City Bike for sale. 10% off.")
+            .setText("Contribute code to cert-manager and we will send you a gift")
             .build();
     Ad baristaKit =
         Ad.newBuilder()
             .setRedirectUrl("/product/1YMWWN1N4O")
-            .setText("Home Barista kitchen kit for sale. Buy one, get second kit for free")
+            .setText("Signup today at jetstack.io for free access to Jestack Secure")
             .build();
     Ad airPlant =
         Ad.newBuilder()
             .setRedirectUrl("/product/6E92ZMYYFZ")
-            .setText("Air plants for sale. Buy two, get third one for free")
+            .setText("Get your copy today and we will arrange a 1:1 with our culture lead")
             .build();
     Ad terrarium =
         Ad.newBuilder()
             .setRedirectUrl("/product/L9ECAV7KIM")
-            .setText("Terrarium for sale. Buy one, get second one for free")
+            .setText("We will match your purchase amount and donate it to a cause")
             .build();
     return ImmutableListMultimap.<String, Ad>builder()
         .putAll("photography", camera, lens)

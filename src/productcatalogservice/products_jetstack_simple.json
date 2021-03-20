@@ -1,0 +1,110 @@
+{
+    "products": [
+        {
+            "id": "OLJCESPC7Z",
+            "name": "Securing Istio",
+            "description": "Want to know more about Machine Identity Lifecyle in an Istio Service Mesh?????????",
+            "picture": "/static/img/products/01.ricardo-gomez-angel-PqkuJqzghew-unsplash.jpg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 4,
+                "nanos": 990000000
+            },
+            "categories": ["vintage"]
+        },
+        {
+            "id": "66VCHSJNUP",
+            "name": "Cluster API",
+            "description": "The past , present and future of Kubernetes Cluster API. Get your copy now!",
+            "picture": "/static/img/products/Kubernetes_Cluster_API.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 3,
+                "nanos": 490000000
+            },
+            "categories": ["photography", "vintage"]
+        },
+        {
+            "id": "1YMWWN1N4O",
+            "name": "Jetstack Secure",
+            "description": "Cloud Native Machine Identity Management. Can't get any better than this. Let's get your a personalized copy.",
+            "picture": "/static/img/products/Jetstack_Secure.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 9
+            },
+            "categories": ["cookware"]
+        },
+        {
+            "id": "L9ECAV7KIM",
+            "name": "The New Normal",
+            "description": "Jetstack operating in the new normal.",
+            "picture": "/static/img/products/The_new_normal.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 1,
+                "nanos": 450000000
+            },
+            "categories": ["gardening"]
+        },
+        {
+            "id": "2ZYFJ3GM2N",
+            "name": "Kubeflow",
+            "description": "Tensorflow, Kubeflow, Machine Learning.. You don't want to miss this.",
+            "picture": "/static/img/products/Kubernetes_Kubeflow.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 2
+            },
+            "categories": ["photography", "vintage"]
+        },
+        {
+            "id": "0PUK6V6EV0",
+            "name": "Knative",
+            "description": "Did you say operators and serverless? We got you covered! ",
+            "picture": "/static/img/products/Kubernetes_Knative.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 6,
+                "nanos": 500000000
+            },
+            "categories": ["music", "vintage"]
+        },
+        {
+            "id": "LS4PSXUNUM",
+            "name": "Kustomize",
+            "description": "It just works !",
+            "picture": "/static/img/products/Kubernetes_Kustomize.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 2,
+                "nanos": 330000000
+            },
+            "categories": ["cookware"]
+        },
+        {
+            "id": "9SIQT8TOJO",
+            "name": "cert-manager joins CNCF",
+            "description": "It's all about machine identities. The community is more important.",
+            "picture": "/static/img/products/Jetstack_cncf.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 7,
+                "nanos": 500000000
+            },
+            "categories": ["cycling"]
+        },
+        {
+            "id": "6E92ZMYYFZ",
+            "name": "Building Jetstack",
+            "description": "It's all about the culture. Learn more about the world of continuous improvement.",
+            "picture": "/static/img/products/Building_jetstack.jpeg",
+            "priceUsd": {
+                "currencyCode": "USD",
+                "units": 1,
+                "nanos": 300000000
+            },
+            "categories": ["gardening"]
+        }
+    ]
+}

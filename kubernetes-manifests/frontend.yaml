@@ -16,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -68,10 +69,10 @@ spec:
             value: "adservice:9555"
           - name: ENV_PLATFORM
             value: "gcp"
-          # - name: DISABLE_TRACING
-          #   value: "1"
-          # - name: DISABLE_PROFILER
-          #   value: "1"
+          - name: DISABLE_TRACING
+            value: "1"
+          - name: DISABLE_PROFILER
+            value: "1"
           # - name: JAEGER_SERVICE_ADDR
           #   value: "jaeger-collector:14268"
           resources:
@@ -86,6 +87,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
+  namespace: default
 spec:
   type: ClusterIP
   selector:
@@ -95,15 +97,16 @@ spec:
     port: 80
     targetPort: 8080
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend-external
-spec:
-  type: LoadBalancer
-  selector:
-    app: frontend
-  ports:
-  - name: http
-    port: 80
-    targetPort: 8080
+#apiVersion: v1
+#kind: Service
+#metadata:
+  #name: frontend-external
+  #namespace: default
+#spec:
+ # type: LoadBalancer
+  #selector:
+   # app: frontend
+  #ports:
+  #- name: http
+   # port: 80
+    #targetPort: 8080

@@ -20,6 +20,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: emailservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -33,14 +34,14 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/emailservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:emailservice-v0.1
         ports:
         - containerPort: 8080
         env:
         - name: PORT
           value: "8080"
-        # - name: DISABLE_TRACING
-        #   value: "1"
+        - name: DISABLE_TRACING
+          value: "1"
         - name: DISABLE_PROFILER
           value: "1"
         readinessProbe:
@@ -63,6 +64,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emailservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -76,6 +78,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -88,7 +91,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: gcr.io/google-samples/microservices-demo/checkoutservice:v0.2.2
+          image: sitaramiyer/storefrontdemo:checkoutservice-v0.1
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -112,12 +115,12 @@ spec:
             value: "currencyservice:7000"
           - name: CART_SERVICE_ADDR
             value: "cartservice:7070"
-          # - name: DISABLE_STATS
-          #   value: "1"
-          # - name: DISABLE_TRACING
-          #   value: "1"
-          # - name: DISABLE_PROFILER
-          #   value: "1"
+          - name: DISABLE_STATS
+            value: "1"
+          - name: DISABLE_TRACING
+            value: "1"
+          - name: DISABLE_PROFILER
+            value: "1"
           # - name: JAEGER_SERVICE_ADDR
           #   value: "jaeger-collector:14268"
           resources:
@@ -132,6 +135,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -145,6 +149,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -158,7 +163,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/recommendationservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:recommendationservice-v0.1
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -174,12 +179,12 @@ spec:
           value: "8080"
         - name: PRODUCT_CATALOG_SERVICE_ADDR
           value: "productcatalogservice:3550"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
-        # - name: DISABLE_DEBUGGER
-        #   value: "1"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
         resources:
           requests:
             cpu: 100m
@@ -192,6 +197,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: recommendationservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -205,6 +211,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -219,7 +226,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: gcr.io/google-samples/microservices-demo/frontend:v0.2.2
+          image: sitaramiyer/storefrontdemo:frontend-v0.1
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -257,10 +264,10 @@ spec:
             value: "adservice:9555"
           - name: ENV_PLATFORM
             value: "gcp"
-          # - name: DISABLE_TRACING
-          #   value: "1"
-          # - name: DISABLE_PROFILER
-          #   value: "1"
+          - name: DISABLE_TRACING
+            value: "1"
+          - name: DISABLE_PROFILER
+            value: "1"
           # - name: JAEGER_SERVICE_ADDR
           #   value: "jaeger-collector:14268"
           resources:
@@ -275,6 +282,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -284,23 +292,25 @@ spec:
     port: 80
     targetPort: 8080
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend-external
-spec:
-  type: LoadBalancer
-  selector:
-    app: frontend
-  ports:
-  - name: http
-    port: 80
-    targetPort: 8080
+#apiVersion: v1
+#kind: Service
+#metadata:
+  #name: frontend-external
+  #namespace: demo
+#spec:
+ # type: LoadBalancer
+  #selector:
+   # app: frontend
+  #ports:
+  #- name: http
+   # port: 80
+    #targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -314,7 +324,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/paymentservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:paymentservice-v0.1
         ports:
         - containerPort: 50051
         env:
@@ -338,6 +348,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paymentservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -351,6 +362,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -364,18 +376,18 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/productcatalogservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:productcatalogservice-v0.1
         ports:
         - containerPort: 3550
         env:
         - name: PORT
           value: "3550"
-        # - name: DISABLE_STATS
-        #   value: "1"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
+        - name: DISABLE_STATS
+          value: "1"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
         # - name: JAEGER_SERVICE_ADDR
         #   value: "jaeger-collector:14268"
         readinessProbe:
@@ -396,6 +408,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productcatalogservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -409,6 +422,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cartservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -422,7 +436,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/cartservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:cartservice-v0.1
         ports:
         - containerPort: 7070
         env:
@@ -449,6 +463,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cartservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -461,42 +476,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loadgenerator
-spec:
-  selector:
-    matchLabels:
-      app: loadgenerator
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: loadgenerator
-      annotations:
-        sidecar.istio.io/rewriteAppHTTPProbers: "true"
-    spec:
-      serviceAccountName: default
-      terminationGracePeriodSeconds: 5
-      restartPolicy: Always
-      containers:
-      - name: main
-        image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.2.2
-        env:
-        - name: FRONTEND_ADDR
-          value: "frontend:80"
-        - name: USERS
-          value: "10"
-        resources:
-          requests:
-            cpu: 300m
-            memory: 256Mi
-          limits:
-            cpu: 500m
-            memory: 512Mi
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: currencyservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -510,17 +491,17 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/currencyservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:currencyservice-v0.1
         ports:
         - name: grpc
           containerPort: 7000
         env:
         - name: PORT
           value: "7000"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
         # - name: DISABLE_DEBUGGER
         #   value: "1"
         readinessProbe:
@@ -541,6 +522,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: currencyservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -554,6 +536,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -566,18 +549,18 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/shippingservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:shippingservice-v0.1
         ports:
         - containerPort: 50051
         env:
         - name: PORT
           value: "50051"
-        # - name: DISABLE_STATS
-        #   value: "1"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
+        - name: DISABLE_STATS
+          value: "1"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
         # - name: JAEGER_SERVICE_ADDR
         #   value: "jaeger-collector:14268"
         readinessProbe:
@@ -599,6 +582,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shippingservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -612,6 +596,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -652,6 +637,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-cart
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
@@ -665,6 +651,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: adservice
+  namespace: demo
 spec:
   selector:
     matchLabels:
@@ -678,16 +665,16 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: gcr.io/google-samples/microservices-demo/adservice:v0.2.2
+        image: sitaramiyer/storefrontdemo:adservice-v0.1
         ports:
         - containerPort: 9555
         env:
         - name: PORT
           value: "9555"
-        # - name: DISABLE_STATS
-        #   value: "1"
-        # - name: DISABLE_TRACING
-        #   value: "1"
+        - name: DISABLE_STATS
+          value: "1"
+        - name: DISABLE_TRACING
+          value: "1"
         #- name: JAEGER_SERVICE_ADDR
         #  value: "jaeger-collector:14268"
         resources:
@@ -712,6 +699,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: adservice
+  namespace: demo
 spec:
   type: ClusterIP
   selector:
