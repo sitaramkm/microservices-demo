@@ -34,7 +34,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:emailservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:emailservice-v0.2.2.mod-03252021-1
         ports:
         - containerPort: 8080
         env:
@@ -91,7 +91,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: sitaramiyer/storefrontdemo:checkoutservice-v0.2.2.mod-03202021
+          image: sitaramiyer/storefrontdemo:checkoutservice-v0.2.2.mod-03252021-1
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -163,7 +163,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:recommendationservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:recommendationservice-v0.2.2.mod-03252021-1
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -226,7 +226,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: sitaramiyer/storefrontdemo:frontend-v0.2.2.mod-03202021
+          image: sitaramiyer/storefrontdemo:frontend-v0.2.2.mod-03252021-1
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -324,7 +324,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:paymentservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:paymentservice-v0.2.2.mod-03252021-1
         ports:
         - containerPort: 50051
         env:
@@ -376,7 +376,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:productcatalogservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:productcatalogservice-v0.2.2.mod-03252021-1
         ports:
         - containerPort: 3550
         env:
@@ -436,7 +436,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:cartservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:cartservice-v0.2.2.mod-03252021-1
         ports:
         - containerPort: 7070
         env:
@@ -491,7 +491,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:currencyservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:currencyservice-v0.2.2.mod-03252021-1
         ports:
         - name: grpc
           containerPort: 7000
@@ -549,7 +549,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:shippingservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:shippingservice-v0.2.2.mod-03252021-1
         ports:
         - containerPort: 50051
         env:
@@ -665,7 +665,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:adservice-v0.2.2.mod-03202021
+        image: sitaramiyer/storefrontdemo:adservice-v0.2.2.mod-03252021-1
         ports:
         - containerPort: 9555
         env:
@@ -675,8 +675,8 @@ spec:
           value: "1"
         - name: DISABLE_TRACING
           value: "1"
-        #- name: JAEGER_SERVICE_ADDR
-        #  value: "jaeger-collector:14268"
+        # - name: JAEGER_SERVICE_ADDR
+        #   value: "jaeger-collector:14268"
         resources:
           requests:
             cpu: 200m
