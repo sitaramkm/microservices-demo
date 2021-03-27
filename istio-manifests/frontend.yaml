@@ -16,10 +16,9 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: frontend
-  namespace: default
 spec:
   hosts:
-  - "frontend.default.svc.cluster.local"
+  - "frontend.demo-storefront.svc.cluster.local"
   http:
   - route:
     - destination:
