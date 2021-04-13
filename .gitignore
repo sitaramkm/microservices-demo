@@ -12,7 +12,4 @@ pkg/
 .project
 .eclipse.buildship.core.prefs
 release/wi-kubernetes-manifests.yaml
-additional-manifests/certificate.yaml
-additional-manifests/certificate2.yaml
-additional-manifests/issuer.yaml
-additional-manifests/test.yaml
+additional-manifests/samples
