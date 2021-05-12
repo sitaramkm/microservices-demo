@@ -41,7 +41,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:emailservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:emailservice-v0.2.2.mod-05122021-1
         ports:
         - containerPort: 8080
         env:
@@ -104,7 +104,7 @@ spec:
       serviceAccountName: storefrontdemo-checkoutservice
       containers:
         - name: server
-          image: sitaramiyer/storefrontdemo:checkoutservice-v0.2.2.mod-04222021-3
+          image: sitaramiyer/storefrontdemo:checkoutservice-v0.2.2.mod-05122021-1
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -182,7 +182,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:recommendationservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:recommendationservice-v0.2.2.mod-05122021-1
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -251,7 +251,7 @@ spec:
       serviceAccountName: storefrontdemo-frontend
       containers:
         - name: server
-          image: sitaramiyer/storefrontdemo:frontend-v0.2.2.mod-04222021-3
+          image: sitaramiyer/storefrontdemo:frontend-v0.2.2.mod-05122021-1
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -356,7 +356,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:paymentservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:paymentservice-v0.2.2.mod-05122021-1
         ports:
         - containerPort: 50051
         env:
@@ -414,7 +414,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:productcatalogservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:productcatalogservice-v0.2.2.mod-05122021-1
         ports:
         - containerPort: 3550
         env:
@@ -480,7 +480,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:cartservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:cartservice-v0.2.2.mod-05122021-1
         ports:
         - containerPort: 7070
         env:
@@ -542,7 +542,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:currencyservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:currencyservice-v0.2.2.mod-05122021-1
         ports:
         - name: grpc
           containerPort: 7000
@@ -606,7 +606,7 @@ spec:
       serviceAccountName: storefrontdemo-shippingservice
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:shippingservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:shippingservice-v0.2.2.mod-05122021-1
         ports:
         - containerPort: 50051
         env:
@@ -734,7 +734,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sitaramiyer/storefrontdemo:adservice-v0.2.2.mod-04222021-3
+        image: sitaramiyer/storefrontdemo:adservice-v0.2.2.mod-05122021-1
         ports:
         - containerPort: 9555
         env:
