@@ -2,8 +2,8 @@
     "products": [
         {
             "id": "OLJCESPC7Z",
-            "name": "Sunglasses",
-            "description": "Add a modern touch to your outfits with these sleek aviator sunglasses.",
+            "name": "Knit Beanie",
+            "description": "The perfect beanie has arrived!. Feel cozy and warm whatever you're doing.",
             "picture": "/static/img/products/sunglasses.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
@@ -26,72 +26,72 @@
         },
         {
             "id": "1YMWWN1N4O",
-            "name": "Watch",
-            "description": "This gold-tone stainless steel watch will work with most of your outfits.",
+            "name": "Eco Tote Bag",
+            "description": "There is more than enough room for groceries, books, and anything in between",
             "picture": "/static/img/products/watch.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
-                "units": 109,
+                "units": 15,
                 "nanos": 990000000
             },
             "categories": ["accessories"]
         },
         {
             "id": "L9ECAV7KIM",
-            "name": "Loafers",
-            "description": "A neat addition to your summer wardrobe.",
+            "name": "Snapback Hat",
+            "description": "This hat is structured with a classic fit, flat brim, and full buckram.",
             "picture": "/static/img/products/loafers.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
-                "units": 89,
+                "units": 24,
                 "nanos": 990000000
             },
             "categories": ["footwear"]
         },
         {
             "id": "2ZYFJ3GM2N",
-            "name": "Hairdryer",
-            "description": "This lightweight hairdryer has 3 heat and speed settings. It's perfect for travel.",
+            "name": "Sherpa Blanket",
+            "description": "Sheeny fleece fabric on one side and super-soft sherpa fabric on the other that will keep you warm and snug",
             "picture": "/static/img/products/hairdryer.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
-                "units": 24,
+                "units": 45,
                 "nanos": 990000000
             },
             "categories": ["hair", "beauty"]
         },
         {
             "id": "0PUK6V6EV0",
-            "name": "Candle Holder",
-            "description": "This small but intricate candle holder is an excellent gift.",
+            "name": "Fleece Joggers",
+            "description": "Well-made and lined with fleece, these comfortable Unisex Fleece Sweatpants.",
             "picture": "/static/img/products/candle-holder.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
-                "units": 18,
+                "units": 39,
                 "nanos": 990000000
             },
             "categories": ["decor", "home"]
         },
         {
             "id": "LS4PSXUNUM",
-            "name": "Salt & Pepper Shakers",
-            "description": "Add some flavor to your kitchen.",
+            "name": "Unisex Fleece Pullover",
+            "description": "Rock a classic sweatshirt silhouette with ribbed crew neck, long sleeve cuffs, and a flat hem",
             "picture": "/static/img/products/salt-and-pepper-shakers.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
-                "units": 18,
+                "units": 29,
                 "nanos": 490000000
             },
             "categories": ["kitchen"]
         },
         {
             "id": "9SIQT8TOJO",
-            "name": "Bamboo Glass Jar",
-            "description": "This bamboo glass jar can hold 57 oz (1.7 l) and is perfect for any kitchen.",
+            "name": "Unisex Hoodie",
+            "description": "It's the perfect choice for cooler evenings!",
             "picture": "/static/img/products/bamboo-glass-jar.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
-                "units": 5,
+                "units": 25,
                 "nanos": 490000000
             },
             "categories": ["kitchen"]
@@ -99,7 +99,7 @@
         {
             "id": "6E92ZMYYFZ",
             "name": "Mug",
-            "description": "A simple mug with a mustard interior.",
+            "description": "A simple mug, just for you!",
             "picture": "/static/img/products/mug.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
