@@ -8,7 +8,7 @@ blinker==1.9.0
     # via flask
 brotli==1.1.0
     # via geventhttpclient
-certifi==2024.12.14
+certifi==2025.1.31
     # via
     #   geventhttpclient
     #   requests
@@ -18,7 +18,7 @@ click==8.1.8
     # via flask
 configargparse==1.7
     # via locust
-faker==33.3.1
+faker==35.0.0
     # via -r requirements.in
 flask==3.1.0
     # via
@@ -55,7 +55,7 @@ psutil==6.1.1
     # via locust
 python-dateutil==2.9.0.post0
     # via faker
-pyzmq==26.2.0
+pyzmq==26.2.1
     # via locust
 requests==2.32.3
     # via locust
