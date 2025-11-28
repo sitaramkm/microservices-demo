@@ -471,7 +471,12 @@ spec:
           periodSeconds: 5
         name: server
         ports:
-        - containerPort: 8080
+        - containerPort: 50051
+        env:
+        - name: PORT
+          value: "50051"
+        - name: DISABLE_PROFILER
+          value: "1"
         readinessProbe:
           grpc:
             port: 8080
@@ -507,7 +512,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: frontend
+      app: cartservice
   template:
     metadata:
       annotations:
@@ -587,11 +592,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: paymentservice
+      app: redis-cart
   template:
     metadata:
       labels:
-        app: paymentservice
+        app: redis-cart
     spec:
       containers:
       - env:
@@ -640,16 +645,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: productcatalogservice
+      app: emailservice
   template:
     metadata:
       labels:
-        app: productcatalogservice
+        app: emailservice
     spec:
       containers:
       - env:
         - name: PORT
-          value: "3550"
+          value: "8080"
         - name: DISABLE_PROFILER
           value: "1"
         image: sitaramiyer222/productcatalogservice:v0.10.2.0124202501
@@ -661,7 +666,7 @@ spec:
         - containerPort: 3550
         readinessProbe:
           grpc:
-            port: 3550
+            port: 8080
         resources:
           limits:
             cpu: 200m
@@ -684,13 +689,14 @@ spec:
       serviceAccountName: productcatalogservice
       terminationGracePeriodSeconds: 5
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
   labels:
     app: recommendationservice
   name: recommendationservice
 spec:
+  type: LoadBalancer
   selector:
     matchLabels:
       app: recommendationservice
@@ -813,7 +819,9 @@ spec:
       containers:
       - env:
         - name: PORT
-          value: "50051"
+          value: "8080"
+        - name: PRODUCT_CATALOG_SERVICE_ADDR
+          value: "productcatalogservice:3550"
         - name: DISABLE_PROFILER
           value: "1"
         image: sitaramiyer222/shippingservice:v0.10.2.0124202501
