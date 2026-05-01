@@ -150,17 +150,17 @@ public final class AdService {
     Ad hairdryer =
         Ad.newBuilder()
             .setRedirectUrl("/product/2ZYFJ3GM2N")
-            .setText("Blanket for sale. 20% off.")
+            .setText("Play golf? Towel for sale. 10% off.")
             .build();
     Ad tankTop =
         Ad.newBuilder()
             .setRedirectUrl("/product/66VCHSJNUP")
-            .setText("Tank top for sale. 20% off.")
+            .setText("Jacket for sale. 20% off.")
             .build();
     Ad candleHolder =
         Ad.newBuilder()
             .setRedirectUrl("/product/0PUK6V6EV0")
-            .setText("Fleece Joggers for sale. 30% off.")
+            .setText("Grab your own PANW Stickers. 10% off today.")
             .build();
     Ad bambooGlassJar =
         Ad.newBuilder()
@@ -170,7 +170,7 @@ public final class AdService {
     Ad watch =
         Ad.newBuilder()
             .setRedirectUrl("/product/1YMWWN1N4O")
-            .setText("Eco Tote Bag for sale. Buy one, get second bag for free")
+            .setText("For your meetings. Buy one, get second set of collection for free")
             .build();
     Ad mug =
         Ad.newBuilder()

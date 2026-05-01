@@ -121,22 +121,22 @@ func (fe *frontendServer) homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func (plat *platformDetails) setPlatformDetails(env string) {
 	if env == "aws" {
-		plat.provider = "MIS Demo"
+		plat.provider = "Identity Demo"
 		plat.css = "aws-platform"
 	} else if env == "onprem" {
-		plat.provider = "MIS Demo"
+		plat.provider = "Identity Demo"
 		plat.css = "onprem-platform"
 	} else if env == "azure" {
-		plat.provider = "MIS Demo"
+		plat.provider = "Identity Demo"
 		plat.css = "azure-platform"
 	} else if env == "gcp" {
-		plat.provider = "MIS Demo"
+		plat.provider = "Identity Demo"
 		plat.css = "gcp-platform"
 	} else if env == "alibaba" {
-		plat.provider = "MIS Demo"
+		plat.provider = "Identity Demo"
 		plat.css = "alibaba-platform"
 	} else {
-		plat.provider = "MIS Demo"
+		plat.provider = "Identity Demo"
 		plat.css = "local"
 	}
 }
@@ -232,7 +232,7 @@ func (fe *frontendServer) addToCartHandler(w http.ResponseWriter, r *http.Reques
 		renderHTTPError(log, r, w, errors.Wrap(err, "failed to add to cart"), http.StatusInternalServerError)
 		return
 	}
-	w.Header().Set("location", baseUrl + "/cart")
+	w.Header().Set("location", baseUrl+"/cart")
 	w.WriteHeader(http.StatusFound)
 }
 
@@ -244,7 +244,7 @@ func (fe *frontendServer) emptyCartHandler(w http.ResponseWriter, r *http.Reques
 		renderHTTPError(log, r, w, errors.Wrap(err, "failed to empty cart"), http.StatusInternalServerError)
 		return
 	}
-	w.Header().Set("location", baseUrl + "/")
+	w.Header().Set("location", baseUrl+"/")
 	w.WriteHeader(http.StatusFound)
 }
 
@@ -423,7 +423,7 @@ func (fe *frontendServer) logoutHandler(w http.ResponseWriter, r *http.Request) 
 		c.MaxAge = -1
 		http.SetCookie(w, c)
 	}
-	w.Header().Set("Location", baseUrl + "/")
+	w.Header().Set("Location", baseUrl+"/")
 	w.WriteHeader(http.StatusFound)
 }
 

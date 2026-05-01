@@ -6,8 +6,8 @@ kustomize edit add component components/non-public-frontend
 #kustomize edit add component components/service-accounts
 kustomize edit add component components/without-loadgenerator
 
-#TAG=v0.10.3.06062025
-TAG=v0.10.2.0124202501
+#TAG=v0.10.5.05012026-01
+TAG=${1:?Usage: update-manifests.sh <tag>  e.g. v0.10.5.05012026-01}
 sed -i'.bak' -e "s/CONTAINER_IMAGES_TAG/$TAG/g" components/container-images-tag/kustomization.yaml
 kustomize edit add component components/container-images-tag
 
